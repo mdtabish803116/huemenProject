@@ -25,13 +25,8 @@ const Wishlist = () => {
               </button>
 
               <h1>
-                <span>{item.strMeal}</span> - {item.strArea}
+               {item.strMeal}
               </h1>
-              {
-                <p>
-                  {item.strCategory} {item.strTags && `- ${item.strTags}`}
-                </p>
-              }
             </div>
           ))}
       </div>

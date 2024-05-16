@@ -41,11 +41,12 @@ const RecipeDetails = () => {
           <img src={selectedRecipe.strMealThumb} alt={selectedRecipe.strMeal} />
         </div>
         <div className="recipe-details">
-          <button onClick={() => dispatch(addToWishlist(selectedRecipe))}>
-            <FaHeart
-              size={30}
-              color={isItemInWishlist(selectedRecipe) ? "red" : "white"}
-            />
+          <button onClick={() => { 
+          dispatch(addToWishlist(selectedRecipe))
+          alert("added succesfully")
+          }
+          }>
+            Add to wishList
           </button>
 
           <h1>

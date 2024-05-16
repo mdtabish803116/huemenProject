@@ -1,9 +1,8 @@
 .recipes-list {
-  width: 30%;
+  width: 40%;
   height: 100vh;
   overflow-y: scroll;
   scroll-behavior: smooth;
-  background-color: rgb(191, 187, 187);
   padding: 10px;
 
   @media screen and (max-width: 500px) {
@@ -23,8 +22,8 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      border: 1px solid gray;
-      padding: 5px 10px;
+      border: 2px solid gray;
+      padding: 20px 10px;
       margin-bottom: 10px;
       border-radius: 5px;
       cursor: pointer;

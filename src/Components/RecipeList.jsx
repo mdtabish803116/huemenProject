@@ -52,8 +52,10 @@ const RecipeList = () => {
                         onClick={() => handleRecipeSelect(recipe)}
                       >
                         {recipe.strMeal}
+                        <p>{recipe.strCategory}</p>
                         <img src={recipe.strMealThumb} alt={recipe.strMeal} />
                       </li>
+                      
                     )}
                   </Draggable>
                 ))}
