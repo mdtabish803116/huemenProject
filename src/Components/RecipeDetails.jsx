@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import "./RecipeDetails.scss";
 import { useDispatch, useSelector } from "react-redux";
-import { FaHeart } from "react-icons/fa6";
 import { addToWishlist } from "../Redux/actionCreators";
 
 const RecipeDetails = () => {
@@ -23,7 +22,16 @@ const RecipeDetails = () => {
     }
   }
 
-  const isItemInWishlist = (recipe) => {
+  const handleAddClick = (selectedRecipe) => {
+     if (isExistInWishlist(selectedRecipe)){
+         alert("item already added")
+     }else {
+        dispatch(addToWishlist(selectedRecipe))
+        alert("item added successfully")
+     }
+  }
+
+  const isExistInWishlist = (recipe) => {
     let result = wishlist.findIndex((item) => item.idMeal === recipe.idMeal);
 
     return result === -1 ? false : true;
@@ -41,10 +49,7 @@ const RecipeDetails = () => {
           <img src={selectedRecipe.strMealThumb} alt={selectedRecipe.strMeal} />
         </div>
         <div className="recipe-details">
-          <button onClick={() => { 
-          dispatch(addToWishlist(selectedRecipe))
-          alert("added succesfully")
-          }
+          <button onClick={() => handleAddClick(selectedRecipe)
           }>
             Add to wishList
           </button>

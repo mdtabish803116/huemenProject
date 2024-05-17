@@ -43,7 +43,6 @@ const recipeReducer = (state = initialState, action) => {
         selectedRecipe: action.payload,
       };
     case ADD_TO_WISHLIST:
-      console.log(action.payload);
       const existingItemIndex = state.wishlist.findIndex(
         (item) => item.idMeal === action.payload.idMeal
       );
